@@ -164,18 +164,7 @@ class MNIST(object):
                 # # if load_checkpoint:
                 # i=99
                 # self.load_checkpoint(saver, sess, i)
-                # trn_acc = list()
-                # for j in range(55000/self.opt.batch_size):
-                #     trn_acc.append(sess.run(accuracy,feed_dict={inp_phld:x_train[j*self.opt.batch_size:(j+1)*self.opt.batch_size,:,:,:],
-                #                                                 outp_phld:y_train[j*self.opt.batch_size:(j+1)*self.opt.batch_size,:]}))
-                # print 'Train accuracy after epoch ' + str(i+1) + ' is ' + str(np.mean(trn_acc))
-                # tst_acc = list()
-                # for j in range(10000/self.opt.batch_size):
-                #     tst_acc.append(sess.run(accuracy,feed_dict={inp_phld:x_test[j*self.opt.batch_size:(j+1)*self.opt.batch_size],
-                #                                                 outp_phld:y_test[j*self.opt.batch_size:(j+1)*self.opt.batch_size]}))
-                # print 'Test accuracy after epoch ' + str(i+1) + ' is ' + str(np.mean(tst_acc))
-                # quit()
-
+                
 
                 for i in range(self.opt.epochs):
                     print 'Epoch ', i+1
@@ -222,7 +211,6 @@ class MNIST(object):
                                                                     outp_phld:y_test[j*self.opt.batch_size:(j+1)*self.opt.batch_size]}))
                     print 'Test accuracy after epoch ' + str(i+1) + ' is ' + str(np.mean(tst_acc))
 
-                    #self.freeze_save_graph(sess, 'capsnet_' + '_' + str(i+1) + '.pb')
                     self.save_checkpoint(saver, sess, i+1)
 
 
