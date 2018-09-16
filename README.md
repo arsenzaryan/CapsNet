@@ -8,6 +8,3 @@ optimizer with exponentially decaying learning rate is used. After each epoch th
 and test sets are computed.
 
 This network without much hyperparameter tuning easily achieved ~99.5% on test set in about 70 epochs.
-
-To run the code, type in the terminal
-  python run.py
